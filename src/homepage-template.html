@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VAG Euro Automotive · Option E2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Audi, Volkswagen and European vehicle service specialists in Seaford, Melbourne. Logbook servicing, DSG and S tronic, timing belts and chains, brakes and diagnostics.">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="VAG Euro Automotive | Audi & VW Specialists, Seaford">
+<meta property="og:description" content="Audi, Volkswagen and European vehicle service specialists in Melbourne's south-east.">
+<meta property="og:image" content="images/workshop-bays.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "VAG Euro Automotive",
+  "description": "Audi, Volkswagen and European vehicle service specialist workshop in Seaford, Victoria.",
+  "image": "images/three-hoists.jpg",
+  "email": "Hiproservicecentre@gmail.com",
+  "telephone": "+61 3 8795 7699",
+  "taxID": "81 677 521 854",
+  "address": {"@type": "PostalAddress", "streetAddress": "11 Stephenson Road", "addressLocality": "Seaford", "addressRegion": "VIC", "postalCode": "3198", "addressCountry": "AU"},
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "14:00"}
+  ],
+  "areaServed": ["Seaford","Frankston","Carrum Downs","Chelsea","Mornington Peninsula"],
+  "paymentAccepted": "EFTPOS, Visa, Mastercard, Afterpay, Zip, humm"
+}
+</script>
+<style>
+/* Layout: prestige showroom, after Prestige Autoworks. Black and white with one orange accent taken from the logo diamond; light uppercase type with wide tracking, full-bleed photography. Single dark theme by choice. */
+:root {
+  --bg: #0A0A0A;
+  --bg-2: #141414;
+  --paper: #F4F4F2;
+  --fg: #FFFFFF;
+  --muted: #A3A3A3;
+  --line: #2C2C2C;
+  --ink: #0A0A0A;
+  --accent: #FF6A1A;
+  --accent-deep: #C9480A;
+  --font: "Jost", "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
+  --wrap: 1280px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 300 17px/1.75 var(--font); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+img { max-width: 100%; height: auto; display: block; }
+figure { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+
+h1, h2, h3 { font-weight: 300; text-transform: uppercase; letter-spacing: 0.12em; line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.2rem, 5.6vw, 4.6rem); letter-spacing: 0.08em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.4rem); }
+h3 { font-size: 1.05rem; font-weight: 400; letter-spacing: 0.16em; }
+p { margin: 0; }
+.eyebrow { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 14px; }
+.eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+.intro .eyebrow, .pitch .eyebrow { color: var(--accent); }
+.intro .eyebrow::after, .pitch .eyebrow::after { content: ""; width: 28px; height: 2px; background: currentColor; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 15px 30px; border: 1px solid currentColor; font: 500 0.78rem/1 var(--font); letter-spacing: 0.26em; text-transform: uppercase; text-decoration: none; background: transparent; color: inherit; cursor: pointer; transition: background .25s, color .25s; }
+.btn:hover { background: var(--fg); color: var(--ink); border-color: var(--fg); }
+.btn-solid { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+.btn-solid:hover { background: transparent; color: var(--accent); border-color: var(--accent); }
+.on-light .btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* Header: sits over the hero like the reference */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(10,10,10,.82); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.08); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 14px; }
+.brand img { height: 46px; width: auto; }
+.nav { display: none; gap: 34px; align-items: center; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; }
+.nav > a, .nav .dd > span { text-decoration: none; color: #D6D6D6; cursor: default; }
+.nav > a:hover, .dd:hover > span { color: var(--accent); }
+.dd { position: relative; }
+.dd > span::after { content: ""; display: inline-block; width: 6px; height: 6px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); margin: 0 0 3px 10px; }
+.dd-menu { position: absolute; top: calc(100% + 18px); left: -22px; min-width: 220px; background: var(--bg); border: 1px solid var(--line); padding: 10px 0; display: none; }
+.dd:hover .dd-menu, .dd:focus-within .dd-menu { display: grid; }
+.dd-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -20px; height: 20px; }
+.dd-menu a { padding: 9px 22px; text-decoration: none; color: #D6D6D6; }
+.dd-menu a:hover { background: var(--bg-2); color: var(--accent); }
+.head-right { display: flex; align-items: center; gap: 18px; }
+.phone { display: none; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; place-items: center; color: var(--fg); }
+.phone svg { width: 16px; height: 16px; }
+@media (min-width: 1000px) { .nav { display: flex; } .phone { display: grid; } }
+@media (max-width: 520px) { .brand img { height: 36px; } .site-head .btn { padding: 12px 16px; letter-spacing: 0.18em; } }
+
+/* Hero */
+.hero { position: relative; min-height: min(88vh, 860px); display: grid; align-items: end; overflow: hidden; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; animation: drift 24s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1.02); } to { transform: scale(1.12) translateY(-1.5%); } }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,10,.75) 0%, rgba(10,10,10,.35) 55%, rgba(10,10,10,.1) 100%), linear-gradient(180deg, rgba(10,10,10,.3) 0%, rgba(10,10,10,.2) 45%, rgba(10,10,10,.92) 100%); }
+.hero .wrap { position: relative; z-index: 1; width: 100%; padding-block: 160px 72px; display: grid; gap: 30px; justify-items: start; }
+.hero .scroll { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+
+/* Intro */
+.intro { text-align: center; }
+.intro .wrap { padding-block: 104px; display: grid; gap: 30px; justify-items: center; }
+.intro h2 { max-width: 22ch; }
+.intro p { color: var(--muted); max-width: 60ch; }
+
+/* Marques row */
+.marques { border-block: 1px solid var(--line); }
+.marques .wrap { display: grid; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .marques .wrap { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .marques .wrap { grid-template-columns: repeat(6, 1fr); } }
+.marques a { display: grid; place-items: center; padding: 30px 8px; text-decoration: none; font-size: 0.86rem; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: #CFCFCF; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s, color .25s; text-align: center; }
+.marques a:hover { background: var(--accent); color: var(--ink); }
+
+/* Feature: full-width image with panel */
+.feature { position: relative; }
+.feature img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 65%; }
+.feature .panel { background: var(--paper); color: var(--ink); padding: 40px 28px; display: grid; gap: 22px; justify-items: start; }
+.feature .panel p { color: #444444; }
+.feature .panel { border-top: 4px solid var(--accent); }
+.feature .panel .eyebrow { color: var(--accent-deep); }
+@media (min-width: 960px) {
+  .feature img { aspect-ratio: 21 / 9; min-height: 560px; }
+  .feature .panel { position: absolute; right: max(40px, calc((100vw - var(--wrap)) / 2 + 40px)); top: 50%; transform: translateY(-50%); width: 440px; padding: 52px 48px; }
+}
+
+/* Booking pitch */
+.pitch .wrap { padding-block: 110px; display: grid; gap: 28px; justify-items: center; text-align: center; }
+.pitch p { color: var(--muted); max-width: 54ch; }
+.pitch .note { font-size: 0.86rem; color: #7A7A7A; }
+
+/* Tiles */
+.tiles { display: grid; grid-template-columns: 1fr; gap: 2px; }
+@media (min-width: 860px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
+.tile { position: relative; overflow: hidden; display: block; text-decoration: none; }
+.tile img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .8s ease; filter: grayscale(.25); }
+.tile:hover img { transform: scale(1.05); filter: none; }
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(10,10,10,.85)); }
+.tile .cap { position: absolute; left: 28px; right: 28px; bottom: 30px; z-index: 1; display: grid; gap: 8px; }
+.tile .cap span { font-size: 0.86rem; color: #CFCFCF; }
+.tile .cap h3::after { content: ""; display: block; width: 32px; height: 2px; background: var(--accent); margin-top: 12px; transition: width .4s; }
+.tile:hover .cap h3::after { width: 72px; }
+
+/* Services list */
+.svc .wrap { padding-block: 104px; display: grid; gap: 48px; }
+@media (min-width: 960px) { .svc .wrap { grid-template-columns: 0.8fr 1.2fr; gap: 80px; } }
+.svc-intro { display: grid; gap: 22px; align-content: start; }
+.svc-intro p { color: var(--muted); }
+.svc-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); columns: 1; }
+@media (min-width: 640px) { .svc-list { columns: 2; column-gap: 40px; } }
+.svc-list li { break-inside: avoid; padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.svc-list li:hover b { color: var(--accent); }
+.svc-list li b { transition: color .2s; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.9rem; }
+.svc-list li span { color: var(--muted); font-size: 0.93rem; }
+
+/* Gallery (Instagram-style) */
+.gram .wrap { padding-block: 0 40px; display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; }
+.gram-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+@media (min-width: 860px) { .gram-grid { grid-template-columns: repeat(4, 1fr); } }
+.gram-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+
+/* Guides */
+.guides .wrap { padding-block: 104px; display: grid; gap: 40px; }
+.guide-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.guide { display: grid; gap: 10px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 860px) { .guide { grid-template-columns: 160px 1fr auto; gap: 40px; align-items: baseline; } }
+.guide .tag { font-size: 0.74rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
+.guide h3 { font-size: 1.1rem; line-height: 1.4; }
+.guide p { color: var(--muted); font-size: 0.95rem; margin-top: 6px; max-width: 62ch; }
+.guide a.more { color: var(--accent); font-size: 0.74rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px; justify-self: start; }
+
+/* Visit (light) */
+.visit-sec { background: var(--paper); color: var(--ink); }
+.visit-sec .wrap { padding-block: 100px; display: grid; gap: 48px; }
+@media (min-width: 960px) { .visit-sec .wrap { grid-template-columns: 1fr 1fr; gap: 80px; } }
+.visit-info { display: grid; gap: 26px; align-content: start; min-width: 0; }
+.visit-sec .eyebrow { color: var(--accent-deep); }
+.addr { font-size: 1.3rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.5; }
+.tel { font-size: 1.3rem; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
+.tel a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--accent); }
+.tel .mail { font-size: 0.95rem; letter-spacing: 0.02em; border-bottom-width: 1px; overflow-wrap: anywhere; }
+.tel br + .mail { display: inline-block; margin-top: 10px; }
+.hours { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; }
+.hours td { padding: 11px 0; border-bottom: 1px solid #D8D8D4; }
+.hours td:first-child { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.82rem; font-weight: 400; }
+.hours td:last-child { text-align: right; color: #555555; }
+.hours tr.today td { font-weight: 500; color: var(--accent-deep); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.visit-sec .btn-solid { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+.visit-sec .btn-solid:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.perks { display: grid; gap: 22px; align-content: start; justify-items: start; min-width: 0; }
+.perks ul { list-style: none; margin: 0; padding: 0; width: 100%; border-top: 1px solid #D8D8D4; }
+.perks li { display: grid; gap: 2px; padding: 16px 0; border-bottom: 1px solid #D8D8D4; }
+.perks li b { font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.86rem; }
+.perks li span { color: #555555; font-size: 0.95rem; }
+.field { display: grid; gap: 6px; }
+.row { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); }
+label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: #6B6B6B; }
+input, select, textarea { width: 100%; background: transparent; color: var(--ink); border: 0; border-bottom: 1px solid #9A9A96; border-radius: 0; padding: 10px 0; font: 400 1rem/1.4 var(--font); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-deep); }
+textarea { min-height: 90px; resize: vertical; }
+.form-note { font-size: 0.86rem; color: #555555; }
+
+/* Booking wizard */
+.book { background: var(--bg-2); border-top: 1px solid var(--line); }
+.book .wrap { padding-block: 104px; display: grid; gap: 48px; }
+@media (min-width: 1000px) { .book .wrap { grid-template-columns: 0.75fr 1.25fr; gap: 80px; } }
+.book-intro { display: grid; gap: 22px; align-content: start; }
+.book-intro p { color: var(--muted); }
+.book-intro ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; color: #D6D6D6; font-size: 0.95rem; }
+.book-intro li::before { content: ""; display: inline-block; width: 14px; height: 2px; background: var(--accent); margin: 0 12px 4px 0; }
+.bk { background: var(--bg); border: 1px solid var(--line); min-width: 0; }
+.bk-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+.bk-steps li { padding: 16px 10px 14px; text-align: center; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #6E6E6E; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.bk-steps li b { display: block; font-weight: 400; font-size: 1rem; letter-spacing: 0.1em; color: inherit; }
+.bk-steps li.on { color: var(--fg); border-color: var(--accent); }
+.bk-steps li.done { color: var(--accent); }
+@media (max-width: 560px) { .bk-steps li { font-size: 0; padding: 12px 4px; } .bk-steps li b { font-size: 0.95rem; } }
+.bk-pane { padding: 32px 24px; display: grid; gap: 26px; }
+@media (min-width: 720px) { .bk-pane { padding: 40px; } }
+.bk-pane[hidden] { display: none; }
+.bk-pane h3 { font-size: 1.15rem; }
+.bk .field label, .bk legend { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.bk fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 12px; min-width: 0; }
+.bk legend { padding: 0; margin-bottom: 12px; }
+.bk input, .bk select, .bk textarea { color: var(--fg); border-bottom-color: #4A4A4A; }
+.bk select option { background: var(--bg); color: var(--fg); }
+.bk input::placeholder, .bk textarea::placeholder { color: #6E6E6E; }
+.bk input:focus, .bk select:focus, .bk textarea:focus { border-color: var(--accent); }
+.chips { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr)); }
+.chips.wide { grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+.chips.slots { grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); }
+.chip { position: relative; display: block; cursor: pointer; text-transform: none; letter-spacing: 0.03em; font-weight: 400; color: inherit; font-size: inherit; }
+.chip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.chip span { display: grid; gap: 2px; height: 100%; padding: 13px 14px; border: 1px solid var(--line); font-size: 0.9rem; line-height: 1.35; color: #D6D6D6; transition: border-color .2s, background .2s, color .2s; }
+.chip span small { color: var(--muted); font-size: 0.8rem; font-weight: 300; letter-spacing: 0; }
+.chip:hover span { border-color: #555555; }
+.chip input:checked + span { border-color: var(--accent); background: rgba(255,106,26,.1); color: var(--fg); }
+.chip input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chip input:disabled + span { opacity: .35; cursor: not-allowed; }
+.slots .chip span, .days .chip span { text-align: center; padding: 11px 6px; font-variant-numeric: tabular-nums; }
+.days { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); }
+.days .chip span b { font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.days .chip input:checked + span b { color: var(--accent); }
+.bk-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 6px; }
+.bk-nav .btn[hidden] { display: none; }
+.bk-err { color: #FF8A4C; font-size: 0.9rem; min-height: 1.4em; }
+.bk-sum { border: 1px solid var(--line); padding: 18px 20px; display: grid; gap: 8px; font-size: 0.92rem; }
+.bk-sum div { display: grid; grid-template-columns: 96px 1fr; gap: 12px; }
+.bk-sum dt { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.bk-sum dd { margin: 0; color: #E6E6E6; }
+.bk-done { padding: 48px 32px; display: grid; gap: 18px; justify-items: start; }
+.bk-done[hidden] { display: none; }
+.bk-done .tick { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--accent); display: grid; place-items: center; color: var(--accent); }
+.bk-done p { color: var(--muted); }
+.bk-done a { color: var(--accent); }
+.hp { position: absolute; left: -9999px; }
+
+/* Booking: light version */
+.book { background: var(--paper); color: var(--ink); border-top: 0; }
+.book .eyebrow { color: var(--accent-deep); }
+.book-intro p { color: #555555; }
+.book-intro ul { color: #333333; }
+.book-intro a { color: var(--ink) !important; }
+.bk { background: #FFFFFF; border-color: #E2E2DE; box-shadow: 0 24px 60px -30px rgba(10,10,10,.25); }
+.bk-steps { border-color: #E2E2DE; }
+.bk-steps li { color: #A3A3A3; }
+.bk-steps li.on { color: var(--ink); }
+.bk-steps li.done { color: var(--accent-deep); }
+.bk .field label, .bk legend { color: #6B6B6B; }
+.bk input, .bk select, .bk textarea { color: var(--ink); border-bottom-color: #C4C4C0; }
+.bk select option { background: #FFFFFF; color: var(--ink); }
+.bk input::placeholder, .bk textarea::placeholder { color: #A3A3A3; }
+.bk input:focus, .bk select:focus, .bk textarea:focus { border-color: var(--accent); }
+.chip span { border-color: #E2E2DE; color: #222222; }
+.chip span small { color: #7A7A7A; }
+.chip:hover span { border-color: #A3A3A3; }
+.chip input:checked + span { border-color: var(--accent); background: #FFF1E8; color: var(--ink); }
+.days .chip span b { color: #7A7A7A; }
+.days .chip input:checked + span b { color: var(--accent-deep); }
+.bk-err { color: var(--accent-deep); }
+.bk-sum { border-color: #E2E2DE; background: #FAFAF8; }
+.bk-sum dt { color: #7A7A7A; }
+.bk-sum dd { color: #222222; }
+.bk-done p { color: #555555; }
+.bk-done a { color: var(--accent-deep); }
+.bk .btn-solid:hover { background: var(--ink); color: #FFFFFF; border-color: var(--ink); }
+
+footer .wrap { padding-block: 64px 36px; display: grid; gap: 36px; }
+@media (min-width: 960px) { footer .wrap { grid-template-columns: 1.2fr 1fr 1.2fr; } }
+footer img { height: 50px; width: auto; }
+footer p, footer li { color: var(--muted); font-size: 0.93rem; }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+footer ul a { text-decoration: none; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.8rem; color: #D6D6D6; }
+footer h3 { font-size: 0.8rem; margin-bottom: 14px; }
+.signup { display: flex; gap: 0; margin-top: 14px; border: 1px solid var(--line); }
+.signup input { flex: 1; min-width: 0; color: var(--fg); border: 0; padding: 13px 14px; }
+.signup button { border: 0; border-left: 1px solid var(--line); color: var(--accent); }
+.legal { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 24px; font-size: 0.76rem; color: #6E6E6E; letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="VAG Euro Automotive home"><img src="brand/logo-colour-on-dark.svg" alt="VAG Euro Automotive" width="200" height="46"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="#story">Our story</a>
+      <div class="dd">
+        <span tabindex="0">Service</span>
+        <div class="dd-menu">
+          <a href="#services">Audi</a><a href="#services">Volkswagen</a><a href="#services">Skoda &amp; Cupra</a><a href="#services">Porsche</a><a href="#services">Mercedes-Benz</a><a href="#services">BMW &amp; Mini</a>
+        </div>
+      </div>
+      <a href="#guides">Guides</a>
+      <a href="#visit">Contact</a>
+    </nav>
+    <div class="head-right">
+      <a class="phone" href="tel:+61387957699" aria-label="Call (03) 8795 7699"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3.5 1.5h2.5l1.2 3-1.6 1.1a8 8 0 0 0 4.8 4.8l1.1-1.6 3 1.2v2.5A1.5 1.5 0 0 1 13 14 11.5 11.5 0 0 1 2 3a1.5 1.5 0 0 1 1.5-1.5z"/></svg></a>
+      <a class="btn btn-solid" href="#book">Book now</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="images/three-hoists.jpg" alt="Three cars raised on hoists across the VAG Euro Automotive workshop" width="1200" height="1600" style="object-position:50% 58%">
+    <div class="wrap">
+      <p class="eyebrow">VAG Euro Automotive · Seaford</p>
+      <h1>Experience<br><span style="color:var(--accent)">precision.</span></h1>
+      <a class="btn" href="#story">Start discovering</a>
+    </div>
+  </section>
+
+  <section class="intro" id="story">
+    <div class="wrap">
+      <p class="eyebrow">Our story</p>
+      <h2>Audi, Volkswagen and European vehicle service specialist.</h2>
+      <p>VAG Euro Automotive has been looking after Volkswagen Group cars in Melbourne's south-east for more than five years. Workshop manager Vic and a team of qualified technicians service and repair everything from a daily Golf to an RS 3. We also look after Porsche, Mercedes-Benz, BMW and other European cars.</p>
+      <a class="btn" href="#visit">Visit our workshop</a>
+    </div>
+  </section>
+
+  <nav class="marques" aria-label="Makes we service">
+    <div class="wrap">
+      <a href="#services">Audi</a><a href="#services">Volkswagen</a><a href="#services">Skoda</a><a href="#services">Porsche</a><a href="#services">Mercedes-Benz</a><a href="#services">BMW</a>
+    </div>
+  </nav>
+
+  <section class="feature">
+    <img src="images/porsche-718-cayman.jpg" alt="White Porsche 718 Cayman in the workshop" width="1600" height="1200" loading="lazy" style="object-position:50% 55%">
+    <div class="panel on-light">
+      <p class="eyebrow">Independent workshop</p>
+      <h2>European vehicle specialists</h2>
+      <p>Dealer-standard servicing without the dealer experience. We follow the manufacturer's logbook schedule and use oils and parts that meet the right specifications. You deal directly with the people working on your car.</p>
+      <a class="btn" href="#services">More about our services</a>
+    </div>
+  </section>
+
+  <section class="book on-light" id="book">
+    <div class="wrap">
+      <div class="book-intro">
+        <p class="eyebrow">Book a service</p>
+        <h2>Book your car in</h2>
+        <p>Tell us about your car, what it needs and when suits you. Vic will call to confirm your booking and give you a quote before any work starts.</p>
+        <ul>
+          <li>Takes about a minute</li>
+          <li>No payment needed to book</li>
+          <li>Loan cars and a waiting lounge available</li>
+          <li>Key drop box for early or after-hours drop-off</li>
+        </ul>
+        <p>Prefer to talk? Call <a href="tel:+61387957699">(03) 8795 7699</a>.</p>
+      </div>
+
+      <div class="bk">
+        <form id="booking" name="booking" method="POST" data-netlify="true" netlify-honeypot="company" novalidate>
+          <input type="hidden" name="form-name" value="booking">
+          <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+          <ol class="bk-steps" aria-label="Booking steps">
+            <li class="on"><b>1</b>Car</li><li><b>2</b>Issue</li><li><b>3</b>Time</li><li><b>4</b>Details</li>
+          </ol>
+
+          <div class="bk-pane" data-step="1">
+            <h3>Which car are we looking after?</h3>
+            <fieldset>
+              <legend>Make</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="make" value="Audi"><span>Audi</span></label>
+                <label class="chip"><input type="radio" name="make" value="Volkswagen"><span>Volkswagen</span></label>
+                <label class="chip"><input type="radio" name="make" value="Skoda"><span>Skoda</span></label>
+                <label class="chip"><input type="radio" name="make" value="Cupra"><span>Cupra</span></label>
+                <label class="chip"><input type="radio" name="make" value="Porsche"><span>Porsche</span></label>
+                <label class="chip"><input type="radio" name="make" value="Mercedes-Benz"><span>Mercedes-Benz</span></label>
+                <label class="chip"><input type="radio" name="make" value="BMW"><span>BMW</span></label>
+                <label class="chip"><input type="radio" name="make" value="Mini"><span>Mini</span></label>
+                <label class="chip"><input type="radio" name="make" value="Other"><span>Other</span></label>
+              </div>
+            </fieldset>
+            <div class="row">
+              <div class="field"><label for="b-model">Model</label><input id="b-model" name="model" list="b-models" placeholder="e.g. Golf GTI" autocomplete="off"><datalist id="b-models"></datalist></div>
+              <div class="field"><label for="b-year">Year</label><select id="b-year" name="year"><option value="">Select</option></select></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="b-rego">Rego <small style="letter-spacing:0;text-transform:none">(optional)</small></label><input id="b-rego" name="rego" autocapitalize="characters" placeholder="ABC123"></div>
+              <div class="field"><label for="b-km">Odometer km <small style="letter-spacing:0;text-transform:none">(optional)</small></label><input id="b-km" name="odometer" inputmode="numeric" placeholder="e.g. 85,000"></div>
+            </div>
+          </div>
+
+          <div class="bk-pane" data-step="2" hidden>
+            <h3>What does it need?</h3>
+            <fieldset>
+              <legend>Choose one or more</legend>
+              <div class="chips wide">
+                <label class="chip"><input type="checkbox" name="service" value="Logbook service"><span>Logbook service<small>To the manufacturer's schedule</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="General service"><span>General service<small>Oil, filter and safety check</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="DSG / S tronic service"><span>DSG / S tronic service<small>Gearbox oil and filter</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Timing belt or chain"><span>Timing belt or chain<small>Replacement or noise check</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Brakes"><span>Brakes<small>Pads, rotors, noise or vibration</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Warning light / diagnostics"><span>Warning light<small>Diagnostics and fault codes</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Suspension & steering"><span>Suspension &amp; steering<small>Knocks, pulling, worn parts</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Air conditioning"><span>Air conditioning<small>Re-gas or not cooling</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Pre-purchase inspection"><span>Pre-purchase inspection<small>Written report before you buy</small></span></label>
+                <label class="chip"><input type="checkbox" name="service" value="Something else"><span>Something else<small>Tell us below</small></span></label>
+              </div>
+            </fieldset>
+            <div class="field"><label for="b-issue">Describe the issue <small style="letter-spacing:0;text-transform:none">(optional)</small></label><textarea id="b-issue" name="issue" placeholder="e.g. Engine light came on yesterday and there's a rattle on cold start."></textarea></div>
+          </div>
+
+          <div class="bk-pane" data-step="3" hidden>
+            <h3>When suits you?</h3>
+            <fieldset>
+              <legend>Drop-off day</legend>
+              <div class="chips days" id="b-days"></div>
+            </fieldset>
+            <fieldset>
+              <legend>Drop-off time</legend>
+              <div class="chips slots" id="b-slots"><p style="color:var(--muted);font-size:0.9rem;grid-column:1/-1">Pick a day first.</p></div>
+            </fieldset>
+            <fieldset>
+              <legend>How would you like to drop off?</legend>
+              <div class="chips wide">
+                <label class="chip"><input type="radio" name="dropoff" value="Drop off and collect later"><span>Drop off, collect later<small>We'll call when it's ready</small></span></label>
+                <label class="chip"><input type="radio" name="dropoff" value="Wait in the lounge"><span>Wait while we work<small>Best for shorter jobs</small></span></label>
+                <label class="chip"><input type="radio" name="dropoff" value="Loan car"><span>I need a loan car<small>Subject to availability</small></span></label>
+                <label class="chip"><input type="radio" name="dropoff" value="Key drop box"><span>Key drop box<small>Drop off early or after hours</small></span></label>
+                <label class="chip"><input type="radio" name="dropoff" value="Pick-up and delivery"><span>Pick-up &amp; delivery<small>We collect and return your car</small></span></label>
+              </div>
+            </fieldset>
+            <div class="field" id="b-addr-wrap" hidden><label for="b-addr">Pick-up address</label><input id="b-addr" name="pickup_address" autocomplete="street-address" placeholder="Street, suburb"></div>
+          </div>
+
+          <div class="bk-pane" data-step="4" hidden>
+            <h3>Your details</h3>
+            <div class="row">
+              <div class="field"><label for="b-name">Name</label><input id="b-name" name="name" autocomplete="name"></div>
+              <div class="field"><label for="b-phone">Mobile</label><input id="b-phone" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+            <div class="field"><label for="b-email">Email <small style="letter-spacing:0;text-transform:none">(optional)</small></label><input id="b-email" name="email" type="email" autocomplete="email"></div>
+            <dl class="bk-sum" id="b-sum" aria-label="Booking summary"></dl>
+          </div>
+
+          <div class="bk-pane" style="padding-top:0">
+            <p class="bk-err" id="b-err" aria-live="polite"></p>
+            <div class="bk-nav">
+              <button class="btn" type="button" id="b-back" hidden>Back</button>
+              <button class="btn btn-solid" type="button" id="b-next" style="margin-left:auto">Next</button>
+              <button class="btn btn-solid" type="submit" id="b-send" hidden style="margin-left:auto">Request booking</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="bk-done" id="b-done" hidden tabindex="-1">
+          <div class="tick"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11.5l4.5 4.5L18 6"/></svg></div>
+          <h3>Booking request received</h3>
+          <p id="b-done-msg"></p>
+          <p>Need to change something? Call <a href="tel:+61387957699">(03) 8795 7699</a> or email <a href="mailto:Hiproservicecentre@gmail.com">Hiproservicecentre@gmail.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tiles">
+    <a class="tile" href="#services"><img src="images/golf-gti-pair.jpg" alt="Two Volkswagen Golf GTIs in the workshop" width="1600" height="1200" loading="lazy" style="object-position:62% 50%"><div class="cap"><h3>Logbook &amp; servicing</h3><span>Warranty-safe, to the manufacturer's schedule</span></div></a>
+    <a class="tile" href="#services"><img src="images/technician-718-hoist.jpg" alt="Technician inspecting a Porsche 718 on the hoist" width="1200" height="1600" loading="lazy" style="object-position:45% 50%"><div class="cap"><h3>Engine &amp; transmission</h3><span>DSG, S tronic, timing belts and chains</span></div></a>
+    <a class="tile" href="#services"><img src="images/under-car-exhaust.jpg" alt="Technician working under a raised Porsche" width="1200" height="1600" loading="lazy" style="object-position:40% 45%"><div class="cap"><h3>Braking &amp; suspension</h3><span>Pads, rotors, shocks and steering</span></div></a>
+  </div>
+
+  <section class="svc" id="services">
+    <div class="wrap">
+      <div class="svc-intro">
+        <p class="eyebrow">Service</p>
+        <h2>What we look after</h2>
+        <p>We quote before any work starts and call you before doing anything extra. Pay by card, Afterpay, Zip or humm.</p>
+        <a class="btn" href="#book">Book now</a>
+      </div>
+      <ul class="svc-list">
+        <li><b>Logbook servicing</b><span>New and used cars, warranty-safe</span></li>
+        <li><b>DSG &amp; S tronic</b><span>Oil services, mechatronic and clutch faults</span></li>
+        <li><b>Timing belt &amp; chain</b><span>Belt kits, water pumps, TSI chains</span></li>
+        <li><b>Brakes</b><span>Pads, rotors, fluid, electronic park brakes</span></li>
+        <li><b>Diagnostics &amp; electrical</b><span>Warning lights, coding, batteries</span></li>
+        <li><b>Suspension &amp; steering</b><span>Shocks, arms, bushes, alignment checks</span></li>
+        <li><b>Engine &amp; cooling</b><span>Leaks, coil packs, pumps, thermostats</span></li>
+        <li><b>Clutch &amp; differential</b><span>Manual clutches, Haldex and quattro</span></li>
+        <li><b>Air conditioning</b><span>Re-gas, leak tests, repairs</span></li>
+        <li><b>Pre-purchase inspections</b><span>A written report before you buy</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="gram" aria-label="Workshop gallery">
+    <div class="wrap">
+      <div style="display:grid;gap:14px"><p class="eyebrow">Gallery</p><h2>In the workshop</h2></div>
+      <a class="btn" href="#visit">Follow us on Instagram</a>
+    </div>
+    <div class="gram-grid">
+      <img src="images/technician-at-work.jpg" alt="Technician under a Porsche on the hoist" width="765" height="1020" loading="lazy">
+      <img src="images/audi-rs3-hoist.jpg" alt="Audi RS 3 on a hoist" width="1600" height="1243" loading="lazy">
+      <img src="images/cayenne-in-workshop.jpg" alt="Porsche Cayenne in the workshop" width="1203" height="1600" loading="lazy" style="object-position:50% 65%">
+      <img src="images/workshop-bays.jpg" alt="The service bays" width="1208" height="1600" loading="lazy" style="object-position:50% 70%">
+      <img src="images/718-bonnet-up.jpg" alt="Porsche 718 on the hoist with the bonnet up" width="1200" height="1600" loading="lazy" style="object-position:50% 50%">
+      <img src="images/audi-s3-bay.jpg" alt="Grey Audi sedan in the service bay" width="1200" height="1600" loading="lazy" style="object-position:50% 62%">
+      <img src="images/workshop-entrance.jpg" alt="Workshop entrance at night with a Porsche inside" width="1200" height="1600" loading="lazy" style="object-position:70% 60%">
+      <img src="images/718-workshop-floor.jpg" alt="White Porsche 718 Cayman on the workshop floor" width="1200" height="1600" loading="lazy" style="object-position:50% 62%">
+    </div>
+  </section>
+
+  <section class="guides" id="guides">
+    <div class="wrap">
+      <div style="display:grid;gap:14px"><p class="eyebrow">News &amp; guides</p><h2>Owner guides</h2></div>
+      <div class="guide-list">
+        <article class="guide"><span class="tag">Servicing</span><div><h3>Logbook servicing and your new-car warranty</h3><p>Why an independent specialist can service your new Audi or VW without affecting the warranty, and what to check in your logbook.</p></div><a class="more" href="#guides">Read article</a></article>
+        <article class="guide"><span class="tag">Transmission</span><div><h3>DSG service: what it is and when your VW needs one</h3><p>Wet-clutch and dry-clutch gearboxes have different needs. Here's how to tell which one you have.</p></div><a class="more" href="#guides">Read article</a></article>
+        <article class="guide"><span class="tag">Engine</span><div><h3>Timing chain noise on TSI engines: what to listen for</h3><p>A rattle on cold start can be an early warning sign. Here's when to book a check.</p></div><a class="more" href="#guides">Read article</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit-sec on-light" id="visit">
+    <div class="wrap">
+      <div class="visit-info">
+        <p class="eyebrow">Contact</p>
+        <h2>Visit our workshop</h2>
+        <p class="addr">11 Stephenson Road<br>Seaford VIC 3198</p>
+        <p class="tel"><a href="tel:+61387957699">(03) 8795 7699</a><br><a class="mail" href="mailto:Hiproservicecentre@gmail.com">Hiproservicecentre@gmail.com</a></p>
+        <table class="hours" aria-label="Opening hours">
+          <tbody>
+            <tr data-day="1"><td>Monday</td><td>8:00 – 5:00</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>8:00 – 5:00</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>8:00 – 5:00</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>8:00 – 5:00</td></tr>
+            <tr data-day="5"><td>Friday</td><td>8:00 – 5:00</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>8:30 – 2:00</td></tr>
+            <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <div class="actions">
+          <a class="btn btn-solid" href="#book">Book appointment</a>
+          <a class="btn" href="tel:+61387957699">Call us</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=11+Stephenson+Road+Seaford+VIC+3198" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+      <div class="perks">
+        <h3>Good to know</h3>
+        <ul>
+          <li><b>Loan cars</b><span>Available on request, subject to availability.</span></li>
+          <li><b>Waiting lounge</b><span>Wait in comfort for shorter jobs.</span></li>
+          <li><b>Key drop box</b><span>Drop your car off early or after hours.</span></li>
+          <li><b>Service warranty</b><span>Our workmanship is covered by warranty.</span></li>
+          <li><b>Easy payment</b><span>EFTPOS, Visa, Mastercard, Afterpay, Zip and humm.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:grid;gap:18px;align-content:start">
+      <img src="brand/logo-colour-on-dark.svg" alt="VAG Euro Automotive" width="218" height="50">
+      <p>Audi, Volkswagen and European vehicle specialists. 11 Stephenson Road, Seaford VIC 3198. Mon–Fri 8:00–5:00, Sat 8:30–2:00.<br><a href="tel:+61387957699">(03) 8795 7699</a> · <a href="mailto:Hiproservicecentre@gmail.com">Hiproservicecentre@gmail.com</a></p>
+    </div>
+    <div><h3>Explore</h3><ul><li><a href="#story">Our story</a></li><li><a href="#services">Service</a></li><li><a href="#guides">News &amp; guides</a></li><li><a href="#book">Book a service</a></li><li><a href="#visit">Contact</a></li></ul></div>
+    <div>
+      <h3>Service reminders</h3>
+      <p>Sign up to receive service reminders and offers.</p>
+      <form class="signup" id="signup" novalidate>
+        <label for="s-email" style="position:absolute;left:-9999px">Email</label>
+        <input id="s-email" type="email" placeholder="Email address" autocomplete="email">
+        <button class="btn" type="submit">Sign up</button>
+      </form>
+      <p class="form-note" id="s-note" aria-live="polite" style="color:var(--muted);margin-top:10px"></p>
+    </div>
+    <p class="legal">&copy; <span id="yr">2026</span> VAG Euro Automotive. ABN 81 677 521 854. Audi, Volkswagen and other marque names are trademarks of their owners. We are an independent workshop, not affiliated with any manufacturer.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var d = new Date();
+  var row = document.querySelector('.hours tr[data-day="' + d.getDay() + '"]');
+  if (row) row.classList.add('today');
+  document.getElementById('yr').textContent = d.getFullYear();
+  // Booking wizard
+  var bf = document.getElementById('booking'), step = 1, last = 4;
+  var panes = bf.querySelectorAll('.bk-pane[data-step]'), dots = bf.querySelectorAll('.bk-steps li');
+  var err = document.getElementById('b-err'), back = document.getElementById('b-back'), next = document.getElementById('b-next'), send = document.getElementById('b-send');
+  var models = {
+    'Audi': ['A1','A3','S3','RS 3','A4','S4','A5','A6','Q2','Q3','Q5','SQ5','Q7','Q8','TT','e-tron'],
+    'Volkswagen': ['Polo','Golf','Golf GTI','Golf R','Jetta','Passat','Arteon','T-Roc','T-Cross','Tiguan','Touareg','Amarok','Transporter','Caddy','Multivan'],
+    'Skoda': ['Fabia','Scala','Octavia','Octavia RS','Superb','Kamiq','Karoq','Kodiaq'],
+    'Cupra': ['Born','Formentor','Leon','Ateca'],
+    'Porsche': ['718 Cayman','718 Boxster','911','Macan','Cayenne','Panamera','Taycan'],
+    'Mercedes-Benz': ['A-Class','C-Class','E-Class','CLA','GLA','GLC','GLE','Sprinter','Vito'],
+    'BMW': ['1 Series','2 Series','3 Series','5 Series','X1','X3','X5'],
+    'Mini': ['Cooper','Cooper S','Countryman','Clubman']
+  };
+  var yr = document.getElementById('b-year');
+  for (var y = d.getFullYear() + 1; y >= 1995; y--) yr.add(new Option(y, y));
+  bf.querySelectorAll('input[name=make]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      document.getElementById('b-models').innerHTML = (models[r.value] || []).map(function (m) { return '<option value="' + m + '">'; }).join('');
+    });
+  });
+
+  // Open days: next 14 days the workshop is open, starting tomorrow
+  var DAY = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var WEEK_SLOTS = ['8:00','8:30','9:00','10:00','11:00','1:00','2:00','3:00'], SAT_SLOTS = ['8:30','9:00','10:00','11:00'];
+  var days = document.getElementById('b-days'), slots = document.getElementById('b-slots'), html = '';
+  for (var i = 1, n = 0; n < 14; i++) {
+    var t = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+    if (t.getDay() === 0) continue;
+    n++;
+    var label = DAY[t.getDay()] + ' ' + t.getDate() + ' ' + MON[t.getMonth()];
+    html += '<label class="chip"><input type="radio" name="day" value="' + label + '" data-sat="' + (t.getDay() === 6 ? 1 : 0) + '"><span><b>' + DAY[t.getDay()] + '</b>' + t.getDate() + ' ' + MON[t.getMonth()] + '</span></label>';
+  }
+  days.innerHTML = html;
+  days.addEventListener('change', function (e) {
+    var list = e.target.dataset.sat === '1' ? SAT_SLOTS : WEEK_SLOTS;
+    slots.innerHTML = list.map(function (s) {
+      var h = parseInt(s, 10), ap = (h >= 8 && h < 12) ? 'am' : 'pm';
+      return '<label class="chip"><input type="radio" name="time" value="' + s + ' ' + ap + '"><span>' + s + ' ' + ap + '</span></label>';
+    }).join('');
+  });
+  bf.querySelectorAll('input[name=dropoff]').forEach(function (r) {
+    r.addEventListener('change', function () { document.getElementById('b-addr-wrap').hidden = r.value !== 'Pick-up and delivery'; });
+  });
+
+  function val(name) { var el = bf.querySelector('[name="' + name + '"]:checked'); return el ? el.value : ''; }
+  function checks() { return Array.prototype.map.call(bf.querySelectorAll('input[name=service]:checked'), function (c) { return c.value; }); }
+  function problem(s) {
+    if (s === 1) { if (!val('make')) return 'Choose the make of your car.'; if (!bf.elements.model.value.trim()) return 'Add the model so we know what to prepare for.'; }
+    if (s === 2) { if (!checks().length && !bf.elements.issue.value.trim()) return 'Choose what your car needs, or describe the issue.'; }
+    if (s === 3) { if (!val('day')) return 'Pick a drop-off day.'; if (!val('time')) return 'Pick a drop-off time.'; if (!val('dropoff')) return 'Choose how you would like to drop off.'; if (val('dropoff') === 'Pick-up and delivery' && !bf.elements.pickup_address.value.trim()) return 'Add the address we should collect from.'; }
+    if (s === 4) { if (!bf.elements.name.value.trim()) return 'Add your name.'; if (bf.elements.phone.value.replace(/\D/g, '').length < 8) return 'Add a phone number so we can confirm.'; }
+    return '';
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function summary() {
+    var car = [bf.elements.year.value, val('make'), bf.elements.model.value.trim()].filter(Boolean).join(' ') + (bf.elements.rego.value.trim() ? ' (' + bf.elements.rego.value.trim().toUpperCase() + ')' : '');
+    var work = checks().join(', ') || 'See notes';
+    var when = val('day') + ', ' + val('time');
+    var how = val('dropoff') + (val('dropoff') === 'Pick-up and delivery' ? ' from ' + bf.elements.pickup_address.value.trim() : '');
+    return [['Car', car], ['Work', work], ['When', when], ['Drop-off', how]].concat(bf.elements.issue.value.trim() ? [['Notes', bf.elements.issue.value.trim()]] : []);
+  }
+  function show(s) {
+    step = s;
+    panes.forEach(function (p) { p.hidden = +p.dataset.step !== s; });
+    dots.forEach(function (li, k) { li.className = k + 1 === s ? 'on' : (k + 1 < s ? 'done' : ''); });
+    back.hidden = s === 1; next.hidden = s === last; send.hidden = s !== last; err.textContent = '';
+    if (s === last) document.getElementById('b-sum').innerHTML = summary().map(function (r) { return '<div><dt>' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join('');
+    var top = bf.getBoundingClientRect().top;
+    if (top < 0) bf.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  bf.addEventListener('input', function () { err.textContent = ''; });
+  next.addEventListener('click', function () { var p = problem(step); if (p) { err.textContent = p; return; } show(step + 1); });
+  back.addEventListener('click', function () { show(step - 1); });
+  bf.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var p = problem(4); if (p) { err.textContent = p; return; }
+    var first = bf.elements.name.value.trim().split(' ')[0];
+    var data = new URLSearchParams(new FormData(bf));
+    data.set('service', checks().join(', '));
+    function done(sent) {
+      bf.hidden = true;
+      var box = document.getElementById('b-done');
+      document.getElementById('b-done-msg').textContent = sent
+        ? 'Thanks, ' + first + '. We\'ll call you on ' + bf.elements.phone.value.trim() + ' to confirm ' + val('day') + ' at ' + val('time') + '.'
+        : 'Thanks, ' + first + '. This is a preview, so nothing was sent. On the live site this request goes straight to the workshop\'s email.';
+      box.hidden = false; box.focus();
+    }
+    // Netlify Forms picks up this POST once the site is hosted there. In the preview there is no form handler.
+    if (/claude|localhost|^$/.test(location.hostname) || location.protocol === 'file:') { done(false); return; }
+    send.disabled = true; send.textContent = 'Sending…';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data.toString() })
+      .then(function (r) { if (!r.ok) throw r; done(true); })
+      .catch(function () {
+        send.disabled = false; send.textContent = 'Request booking';
+        var body = summary().map(function (r) { return r[0] + ': ' + r[1]; }).join('\n') + '\nName: ' + bf.elements.name.value + '\nPhone: ' + bf.elements.phone.value;
+        err.innerHTML = 'That didn\'t send. <a style="color:var(--accent)" href="mailto:Hiproservicecentre@gmail.com?subject=' + encodeURIComponent('Booking request') + '&body=' + encodeURIComponent(body) + '">Email your booking instead</a> or call (03) 8795 7699.';
+      });
+  });
+  document.getElementById('signup').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('s-note').textContent = 'Sign-ups will work once the site is live. Nothing was saved.';
+  });
+})();
+</script>
+</body>
+</html>
