@@ -83,7 +83,7 @@ areas = ''.join(f'<li>{a}</li>' for a in AREAS)
 rep('  <section class="visit-sec on-light" id="visit">', faq_html(QA) + f'''  <section class="areas">
     <div class="wrap">
       <div style="display:grid;gap:14px;align-content:start"><p class="eyebrow">Areas we service</p><h2>Car mechanic for Seaford, Frankston and surrounds</h2></div>
-      <div style="display:grid;gap:22px"><p>Our workshop is in the Seaford industrial area off Stephenson Road, easy to reach from Frankston, Patterson Lakes, Carrum Downs and Chelsea. Customers bring their Audi, Volkswagen and European cars to us from:</p><ul class="area-list">{areas}</ul><p style="display:flex;gap:24px;flex-wrap:wrap"><a class="more" href="{PAGES['frankston'][0]}">Mechanic near Frankston</a><a class="more" href="{PAGES['patterson'][0]}">Mechanic near Patterson Lakes</a></p></div>
+      <div style="display:grid;gap:22px"><p>Our workshop is in the Seaford industrial area off Stephenson Road, easy to reach from Frankston, Patterson Lakes, Carrum Downs and Chelsea. Customers bring their Audi, Volkswagen and European cars to us from:</p><ul class="area-list">{areas}</ul><p style="display:flex;gap:24px;flex-wrap:wrap"><a class="more" href="{PAGES['seaford'][0]}">Mechanic Seaford</a><a class="more" href="{PAGES['frankston'][0]}">Frankston mechanic</a><a class="more" href="{PAGES['patterson'][0]}">Mechanic near Patterson Lakes</a></p></div>
     </div>
   </section>
 

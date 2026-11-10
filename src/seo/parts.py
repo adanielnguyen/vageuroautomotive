@@ -10,13 +10,14 @@ PAGES = {
     'audi': ('audi-mechanic-seaford.html', 'Audi'),
     'vw': ('volkswagen-mechanic-seaford.html', 'Volkswagen'),
     'euro': ('european-car-mechanic-seaford.html', 'European cars'),
+    'seaford': ('mechanic-seaford.html', 'Seaford'),
     'frankston': ('mechanic-frankston.html', 'Frankston'),
     'patterson': ('mechanic-patterson-lakes.html', 'Patterson Lakes'),
     'dsg': ('dsg-transmission-repair.html', 'DSG & transmission'),
     'mech': ('mechatronic-unit-repair.html', 'Mechatronic repair'),
     'pump': ('vw-water-pump-replacement.html', 'VW water pump'),
 }
-LINK_TEXT = {'audi': 'Audi mechanic Seaford', 'vw': 'Volkswagen mechanic Seaford', 'euro': 'European car mechanic Seaford', 'frankston': 'Mechanic near Frankston',
+LINK_TEXT = {'audi': 'Audi mechanic Seaford', 'vw': 'Volkswagen mechanic Seaford', 'euro': 'European car mechanic Seaford', 'seaford': 'Mechanic Seaford', 'frankston': 'Frankston mechanic',
              'patterson': 'Mechanic near Patterson Lakes', 'dsg': 'DSG &amp; transmission repair', 'mech': 'DSG mechatronic unit repair', 'pump': 'VW water pump replacement'}
 GUIDES = {
     'warranty': ('logbook-servicing-new-car-warranty.html', 'Logbook servicing and your new-car warranty'),
@@ -147,7 +148,7 @@ def header(home):
 
 def footer(home):
     h = '' if home else 'index.html'
-    svc = ''.join(f'<li><a href="{PAGES[k][0]}">{LINK_TEXT[k]}</a></li>' for k in ['audi', 'vw', 'dsg', 'mech', 'pump', 'frankston', 'patterson']) + f'<li><a href="{h}#book">Book a service</a></li>'
+    svc = ''.join(f'<li><a href="{PAGES[k][0]}">{LINK_TEXT[k]}</a></li>' for k in ['seaford', 'frankston', 'patterson', 'audi', 'vw', 'dsg', 'mech', 'pump']) + f'<li><a href="{h}#book">Book a service</a></li>'
     gd = ''.join(f'<li><a href="{u}">{t}</a></li>' for u, t in GUIDES.values())
     return f'''<footer>
   <div class="wrap">

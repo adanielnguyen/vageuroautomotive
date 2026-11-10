@@ -182,32 +182,67 @@ page(PAGES['euro'][0],
       ('Can you do a pre-purchase inspection on a European car?', "Yes. We inspect the car before you buy and give you a written report on what we find.")],
      'Book your European car in', 'European car mechanic')
 
+# ---------- Seaford ----------
+page(PAGES['seaford'][0],
+     'Mechanic Seaford | Audi, VW & European Car Mechanic | VAG Euro Automotive',
+     f'Local car mechanic in Seaford. Audi and Volkswagen specialists for logbook servicing, DSG and transmission repair, mechatronics, water pumps and brakes. Call {PHONE}.',
+     'Your local mechanic in Seaford', 'Seaford mechanic',
+     'An independent car mechanic at 11 Stephenson Road, Seaford, specialising in Audi and Volkswagen and servicing European cars of every make.',
+     'workshop-entrance', 'Entrance to the VAG Euro Automotive mechanic workshop on Stephenson Road, Seaford',
+     f'''        <p class="lede">VAG Euro Automotive is a Seaford mechanic in the industrial area off Stephenson Road. For more than five years we've serviced and repaired cars for Seaford locals, with a focus on Audi, Volkswagen, Skoda and Cupra.</p>
+        <h2>What our Seaford workshop does</h2>
+        <ul>
+          <li>Logbook servicing that keeps your new-car warranty intact</li>
+          <li><a href="{PAGES['audi'][0]}">Audi servicing and repairs</a></li>
+          <li><a href="{PAGES['vw'][0]}">Volkswagen servicing and repairs</a></li>
+          <li><a href="{PAGES['dsg'][0]}">DSG and transmission repair</a></li>
+          <li><a href="{PAGES['mech'][0]}">DSG mechatronic unit repair</a></li>
+          <li><a href="{PAGES['pump'][0]}">VW water pump replacement</a></li>
+          <li>Timing belts and chains, brakes, suspension, diagnostics and warning lights</li>
+          <li><a href="{PAGES['euro'][0]}">Porsche, Mercedes-Benz, BMW and Mini</a></li>
+        </ul>
+        <h2>Why choose a specialist mechanic in Seaford</h2>
+        <p>We work on Volkswagen Group cars every day, so we know their common faults and have the right diagnostic equipment and parts. You talk to the mechanic doing the work, and we give you a quote before anything starts.</p>
+        <h2>Easy to get to</h2>
+        <p>We're at 11 Stephenson Road, Seaford VIC 3198, close to Seaford station, Kananook and the Frankston Freeway. Loan cars are available on request, subject to availability, and there's a waiting lounge and a key drop box for early or after-hours drop-off. We're open Monday to Friday 8:00 to 5:00 and Saturday 8:30 to 2:00.</p>
+        <h2>Also close to</h2>
+        <p><a href="{PAGES['frankston'][0]}">Frankston</a>, <a href="{PAGES['patterson'][0]}">Patterson Lakes</a>, Carrum Downs, Chelsea, Carrum and Kananook.</p>''',
+     ['Seaford', 'Kananook', 'Frankston', 'Carrum Downs', 'Patterson Lakes', 'Chelsea'],
+     [('Where is your Seaford workshop?', 'We are at 11 Stephenson Road, Seaford VIC 3198, in the industrial area near Kananook and the Frankston Freeway.'),
+      ('What cars do you work on?', 'Audi and Volkswagen are our speciality, and we also service Skoda, Cupra, Porsche, Mercedes-Benz, BMW and Mini.'),
+      ('Can you service my car while I wait?', 'For shorter jobs, yes. You can wait in our lounge, or ask for a loan car for longer work, subject to availability.')],
+     'Book your car in at our Seaford workshop', 'Mechanic Seaford')
+
 # ---------- Frankston ----------
 page(PAGES['frankston'][0],
-     'Mechanic near Frankston | Audi & VW Car Mechanic | VAG Euro Automotive',
-     f'Looking for a mechanic near Frankston? VAG Euro Automotive in Seaford services Audi, Volkswagen and European cars, a short drive from Frankston. Call {PHONE}.',
-     'Car mechanic near Frankston', 'Frankston &amp; surrounds',
-     'Our Seaford workshop is a short drive from Frankston. Bring us your Audi, Volkswagen or European car for servicing and repairs.',
+     'Frankston Mechanic | Audi & VW Car Mechanic near Frankston | VAG Euro Automotive',
+     f'Looking for a Frankston mechanic? VAG Euro Automotive in Seaford, minutes from Frankston, services Audi, Volkswagen and European cars: DSG, mechatronics, water pumps and logbook servicing. Call {PHONE}.',
+     'Frankston mechanic for Audi &amp; VW', 'Frankston &amp; surrounds',
+     'Our Seaford workshop is a few minutes from Frankston. Bring us your Audi, Volkswagen or European car for servicing and repairs.',
      'three-hoists', 'Cars on hoists at the VAG Euro Automotive workshop near Frankston',
-     f'''        <p class="lede">If you live or work in Frankston, VAG Euro Automotive is close by at 11 Stephenson Road, Seaford. We're an independent car mechanic that specialises in Audi and Volkswagen and services other European cars too.</p>
-        <h2>Why Frankston drivers come to Seaford</h2>
+     f'''        <p class="lede">If you live or work in Frankston, VAG Euro Automotive is close by at 11 Stephenson Road, Seaford, just up the Frankston Freeway or Nepean Highway. We're an independent car mechanic that specialises in Audi and Volkswagen and services other European cars too.</p>
+        <h2>Why Frankston drivers come to us</h2>
         <p>A specialist knows the common faults on your car and has the right parts, so jobs are done properly the first time. You talk to the mechanic doing the work and get a quote before anything starts.</p>
         <h2>Services for Frankston customers</h2>
         <ul>
           <li><a href="{PAGES['audi'][0]}">Audi servicing and repairs</a></li>
           <li><a href="{PAGES['vw'][0]}">Volkswagen servicing and repairs</a></li>
+          <li><a href="{PAGES['dsg'][0]}">DSG and transmission repair</a></li>
+          <li><a href="{PAGES['mech'][0]}">DSG mechatronic unit repair</a></li>
+          <li><a href="{PAGES['pump'][0]}">VW water pump replacement</a></li>
           <li><a href="{PAGES['euro'][0]}">Skoda, Cupra, Porsche, Mercedes-Benz and BMW</a></li>
           <li>Logbook servicing without affecting your new-car warranty</li>
-          <li>DSG and S tronic servicing, timing chains, brakes and diagnostics</li>
+          <li>Timing chains, brakes, suspension and diagnostics</li>
         </ul>
         <h2>Easy drop-off</h2>
         <p>Loan cars are available on request, subject to availability. You can also wait in our lounge for shorter jobs, or leave your keys in the key drop box before work. We're open Monday to Friday 8:00 to 5:00 and Saturday 8:30 to 2:00.</p>
         <h2>Suburbs we service</h2>
-        <p>{', '.join(AREAS)}.</p>''',
-     ['Frankston', 'Frankston North', 'Seaford', 'Carrum Downs', 'Langwarrin', 'Kananook'],
-     [('How far is your workshop from Frankston?', 'We are at 11 Stephenson Road, Seaford, a short drive from Frankston.'),
+        <p>Frankston, Frankston North, Frankston South, Karingal, Langwarrin, Skye, Carrum Downs, <a href="{PAGES['seaford'][0]}">Seaford</a>, Kananook, <a href="{PAGES['patterson'][0]}">Patterson Lakes</a>, Chelsea and the Mornington Peninsula.</p>''',
+     ['Frankston', 'Frankston North', 'Karingal', 'Langwarrin', 'Seaford', 'Carrum Downs'],
+     [('How far is your workshop from Frankston?', 'We are at 11 Stephenson Road, Seaford, a few minutes from Frankston via the Frankston Freeway or Nepean Highway.'),
+      ('Do you do DSG and mechatronic repairs for Frankston customers?', 'Yes. We service and repair DSG and S tronic gearboxes, including mechatronic units, for drivers from Frankston and the Mornington Peninsula.'),
       ('Do you only work on European cars?', 'Audi and Volkswagen are our speciality, and we also service Skoda, Cupra, Porsche, Mercedes-Benz, BMW and Mini.')],
-     'Book your car in from Frankston', 'Mechanic near Frankston')
+     'Book your car in from Frankston', 'Frankston mechanic')
 
 def service(name, desc):
     return {'@type': 'Service', 'name': name, 'serviceType': name, 'description': desc, 'provider': {'@id': SITE + '/#business'},
@@ -218,7 +253,7 @@ def service(name, desc):
 page(PAGES['dsg'][0],
      'DSG & Transmission Repair Seaford | Audi & VW Mechanic near Frankston',
      f'DSG, S tronic and automatic transmission servicing and repair in Seaford, near Frankston and Patterson Lakes. Gearbox faults, mechatronics and DSG services. Call {PHONE}.',
-     'DSG &amp; transmission repair in Seaford', 'DSG · S tronic · automatic',
+     'DSG &amp; transmission repair in Seaford', 'DSG · S tronic · near Frankston',
      'Gearbox servicing, diagnosis and repair for Volkswagen, Audi, Skoda and Cupra DSG and S tronic transmissions, from mechanics who work on them every week.',
      'audi-s3-bay', 'Audi in the service bay for DSG transmission repair in Seaford',
      f'''        <p class="lede">A dual-clutch DSG or S tronic gearbox needs a mechanic who knows it. We service, diagnose and repair Volkswagen Group transmissions at our Seaford workshop, a short drive from Frankston and Patterson Lakes.</p>
@@ -247,9 +282,9 @@ page(PAGES['dsg'][0],
 
 # ---------- Mechatronic ----------
 page(PAGES['mech'][0],
-     'DSG Mechatronic Unit Repair Seaford | VW & Audi Mechatronics',
+     'Mechatronic Unit Repair Seaford & Frankston | DSG & S tronic Mechatronics',
      f'DSG and S tronic mechatronic unit diagnosis and repair in Seaford, near Frankston and Patterson Lakes. Fix gearbox faults without replacing the whole transmission. Call {PHONE}.',
-     'DSG mechatronic unit repair', 'Mechatronics',
+     'DSG mechatronic unit repair in Seaford', 'Mechatronics · near Frankston',
      'Diagnosis and repair of DSG and S tronic mechatronic units for Volkswagen, Audi, Skoda and Cupra. Often the fix that saves replacing the whole gearbox.',
      'technician-718-hoist', 'Mechanic diagnosing a gearbox fault on a car on the hoist',
      f'''        <p class="lede">The mechatronic unit is the brain of a DSG or S tronic gearbox. It combines the transmission's control electronics with the hydraulics that operate the clutches and shift the gears. When it fails, the gearbox can't shift properly.</p>
@@ -275,9 +310,9 @@ page(PAGES['mech'][0],
 
 # ---------- VW water pump ----------
 page(PAGES['pump'][0],
-     'VW Water Pump Replacement Seaford | Volkswagen & Audi Coolant Leaks',
+     'VW Water Pump Replacement Seaford & Frankston | Volkswagen Coolant Leaks',
      f'VW water pump and thermostat housing replacement in Seaford, near Frankston and Patterson Lakes. Fix coolant leaks on Golf, Tiguan, Passat, Amarok and Audi. Call {PHONE}.',
-     'VW water pump replacement', 'Cooling system',
+     'VW water pump replacement in Seaford', 'Cooling system · near Frankston',
      'Coolant leaks and low coolant warnings are common on Volkswagen and Audi engines. We find the leak and replace the water pump, thermostat housing or hoses with quality parts.',
      'golf-gti-pair', 'Volkswagen Golf GTIs at our Seaford workshop for water pump replacement',
      f'''        <p class="lede">On many Volkswagen and Audi petrol engines, the water pump and thermostat sit in a plastic housing that can crack or leak with age and heat. On diesels, the water pump is driven by the timing belt and is replaced with it.</p>
@@ -321,7 +356,7 @@ page(PAGES['patterson'][0],
         <h2>Easy drop-off</h2>
         <p>Loan cars are available on request, subject to availability. You can also wait in our lounge for shorter jobs, or leave your keys in the key drop box early or after hours. We're open Monday to Friday 8:00 to 5:00 and Saturday 8:30 to 2:00.</p>
         <h2>Also close to</h2>
-        <p>Seaford, Frankston, Carrum Downs, Chelsea, Aspendale and Kananook. <a href="{PAGES['frankston'][0]}">Mechanic near Frankston</a>.</p>''',
+        <p><a href="{PAGES['seaford'][0]}">Seaford</a>, <a href="{PAGES['frankston'][0]}">Frankston</a>, Carrum Downs, Chelsea, Aspendale and Kananook.</p>''',
      ['Patterson Lakes', 'Carrum', 'Bonbeach', 'Seaford', 'Chelsea', 'Carrum Downs'],
      [('How far is your workshop from Patterson Lakes?', 'We are at 11 Stephenson Road, Seaford, a short drive from Patterson Lakes and Carrum.'),
       ('Do you only work on Audi and Volkswagen?', 'Audi and Volkswagen are our speciality, and we also service Skoda, Cupra, Porsche, Mercedes-Benz, BMW and Mini.')],
