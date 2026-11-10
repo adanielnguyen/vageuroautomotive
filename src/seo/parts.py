@@ -1,6 +1,6 @@
 import json
 
-SITE = 'https://vageuroautomotive.com.au'   # assumed domain, change in one place
+SITE = 'https://vageuroautomotive.com.au'
 NAME = 'VAG Euro Automotive'
 PHONE, PHONE_INTL, TEL = '(03) 8795 7699', '+61 3 8795 7699', 'tel:+61387957699'
 EMAIL = 'Hiproservicecentre@gmail.com'
@@ -11,7 +11,13 @@ PAGES = {
     'vw': ('volkswagen-mechanic-seaford.html', 'Volkswagen'),
     'euro': ('european-car-mechanic-seaford.html', 'European cars'),
     'frankston': ('mechanic-frankston.html', 'Frankston'),
+    'patterson': ('mechanic-patterson-lakes.html', 'Patterson Lakes'),
+    'dsg': ('dsg-transmission-repair.html', 'DSG & transmission'),
+    'mech': ('mechatronic-unit-repair.html', 'Mechatronic repair'),
+    'pump': ('vw-water-pump-replacement.html', 'VW water pump'),
 }
+LINK_TEXT = {'audi': 'Audi mechanic Seaford', 'vw': 'Volkswagen mechanic Seaford', 'euro': 'European car mechanic Seaford', 'frankston': 'Mechanic near Frankston',
+             'patterson': 'Mechanic near Patterson Lakes', 'dsg': 'DSG &amp; transmission repair', 'mech': 'DSG mechatronic unit repair', 'pump': 'VW water pump replacement'}
 GUIDES = {
     'warranty': ('logbook-servicing-new-car-warranty.html', 'Logbook servicing and your new-car warranty'),
     'dsg': ('dsg-service-guide.html', 'DSG service: what it is and when your VW needs one'),
@@ -46,7 +52,7 @@ BUSINESS = {
     'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Car servicing and repairs', 'itemListElement': [
         {'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': s}} for s in [
             'Logbook servicing', 'Audi servicing', 'Volkswagen servicing', 'DSG and S tronic servicing', 'Timing belt and timing chain replacement',
-            'Brake repairs', 'Diagnostics and warning lights', 'Suspension and steering', 'Air conditioning service', 'Pre-purchase car inspections', 'quattro and Haldex servicing', 'DPF repairs', 'DSG and S tronic mechatronic unit repair']]},
+            'Brake repairs', 'Diagnostics and warning lights', 'Suspension and steering', 'Air conditioning service', 'Pre-purchase car inspections', 'quattro and Haldex servicing', 'DPF repairs', 'DSG and S tronic mechatronic unit repair', 'DSG and automatic transmission repair', 'Volkswagen water pump replacement']]},
 }
 
 
@@ -124,7 +130,7 @@ def header(home):
       <div class="dd">
         <span tabindex="0">Service</span>
         <div class="dd-menu">
-          <a href="{PAGES['audi'][0]}">Audi</a><a href="{PAGES['vw'][0]}">Volkswagen</a><a href="{PAGES['euro'][0]}">Skoda &amp; Cupra</a><a href="{PAGES['euro'][0]}">Porsche</a><a href="{PAGES['euro'][0]}">Mercedes-Benz</a><a href="{PAGES['euro'][0]}">BMW &amp; Mini</a><a href="{h}#services">All services</a>
+          <a href="{PAGES['audi'][0]}">Audi</a><a href="{PAGES['vw'][0]}">Volkswagen</a><a href="{PAGES['euro'][0]}">Skoda &amp; Cupra</a><a href="{PAGES['euro'][0]}">Porsche</a><a href="{PAGES['euro'][0]}">Mercedes-Benz</a><a href="{PAGES['euro'][0]}">BMW &amp; Mini</a><a href="{PAGES['dsg'][0]}">DSG &amp; transmission</a><a href="{PAGES['mech'][0]}">Mechatronic repair</a><a href="{PAGES['pump'][0]}">VW water pumps</a><a href="{h}#services">All services</a>
         </div>
       </div>
       <a href="{h}#guides">Guides</a>
@@ -141,7 +147,7 @@ def header(home):
 
 def footer(home):
     h = '' if home else 'index.html'
-    svc = ''.join(f'<li><a href="{u}">{n} mechanic</a></li>' for u, n in [PAGES['audi'], PAGES['vw'], (PAGES['euro'][0], 'European car')]) + f'<li><a href="{PAGES["frankston"][0]}">Mechanic near Frankston</a></li><li><a href="{h}#book">Book a service</a></li>'
+    svc = ''.join(f'<li><a href="{PAGES[k][0]}">{LINK_TEXT[k]}</a></li>' for k in ['audi', 'vw', 'dsg', 'mech', 'pump', 'frankston', 'patterson']) + f'<li><a href="{h}#book">Book a service</a></li>'
     gd = ''.join(f'<li><a href="{u}">{t}</a></li>' for u, t in GUIDES.values())
     return f'''<footer>
   <div class="wrap">

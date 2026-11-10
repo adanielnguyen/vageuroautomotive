@@ -49,7 +49,8 @@ rep('<a class="tile" href="#services"><img src="images/technician-718-hoist.jpg"
 rep('<a class="tile" href="#services"><img src="images/under-car-exhaust.jpg" alt="Technician working under a raised Porsche"', f'<a class="tile" href="{PAGES["audi"][0]}"><img src="images/under-car-exhaust.jpg" srcset="images/under-car-exhaust-800.jpg 800w, images/under-car-exhaust.jpg 1200w" sizes="(min-width: 860px) 33vw, 100vw" alt="Mechanic inspecting brakes and suspension under a raised car"')
 
 # 7. Services intro
-rep('<li><b>DSG &amp; S tronic</b><span>Oil services, mechatronic and clutch faults</span></li>', '<li><b>DSG &amp; S tronic</b><span>Gearbox oil services and clutch faults</span></li>\n        <li><b>Mechatronic unit repair</b><span>DSG and S tronic mechatronic faults and repairs</span></li>')
+rep('<li><b>DSG &amp; S tronic</b><span>Oil services, mechatronic and clutch faults</span></li>', f'<li><b><a href="{PAGES["dsg"][0]}">DSG &amp; transmission</a></b><span>DSG, S tronic and automatic gearbox repairs</span></li>\n        <li><b><a href="{PAGES["mech"][0]}">Mechatronic unit repair</a></b><span>DSG and S tronic mechatronic faults and repairs</span></li>')
+rep('<li><b>Engine &amp; cooling</b><span>Leaks, coil packs, pumps, thermostats</span></li>', f'<li><b><a href="{PAGES["pump"][0]}">Water pumps &amp; cooling</a></b><span>VW water pumps, thermostat housings and coolant leaks</span></li>')
 rep('<li><b>Clutch &amp; differential</b><span>Manual clutches, Haldex and quattro</span></li>', '<li><b>quattro &amp; Haldex</b><span>Haldex services, quattro, 4MOTION and differentials</span></li>\n        <li><b>Diesel &amp; DPF</b><span>DPF repairs, EGR faults and TDI diesels</span></li>')
 rep('<h2>What we look after</h2>', '<h2>Car servicing &amp; repairs</h2>')
 
@@ -74,6 +75,7 @@ QA = [
     ('Where is your workshop?', 'We are at 11 Stephenson Road, Seaford VIC 3198, a short drive from Frankston, Carrum Downs and Chelsea. We are open Monday to Friday 8:00 to 5:00 and Saturday 8:30 to 2:00.'),
     ('How do I book my car in?', f'Use the booking form on this page to choose your car, what it needs and a drop-off time, or call us on {PHONE}. We call you to confirm and give you a quote before any work starts.'),
     ('Do you have loan cars?', 'Yes, loan cars are available on request, subject to availability. You can also wait in our lounge for shorter jobs, or use the key drop box to drop off early or after hours.'),
+    ('Do you repair DSG gearboxes and mechatronic units?', 'Yes. We service and repair DSG and S tronic transmissions, including mechatronic unit diagnosis and repair, often without replacing the whole gearbox.'),
     ('Do you do quattro, Haldex and DPF repairs?', 'Yes. We service Haldex all-wheel-drive systems on Audi quattro and Volkswagen 4MOTION cars, and diagnose and repair diesel particulate filter (DPF) and EGR faults on TDI diesels.'),
     ('Can I pay with Afterpay or Zip?', 'Yes. We accept EFTPOS, Visa, Mastercard, Afterpay, Zip and humm.'),
 ]
@@ -81,7 +83,7 @@ areas = ''.join(f'<li>{a}</li>' for a in AREAS)
 rep('  <section class="visit-sec on-light" id="visit">', faq_html(QA) + f'''  <section class="areas">
     <div class="wrap">
       <div style="display:grid;gap:14px;align-content:start"><p class="eyebrow">Areas we service</p><h2>Car mechanic for Seaford, Frankston and surrounds</h2></div>
-      <div style="display:grid;gap:22px"><p>Our workshop is in the Seaford industrial area off Stephenson Road, easy to reach from Frankston, Carrum Downs and Chelsea. Customers bring their Audi, Volkswagen and European cars to us from:</p><ul class="area-list">{areas}</ul><p><a class="more" href="{PAGES['frankston'][0]}">Mechanic near Frankston</a></p></div>
+      <div style="display:grid;gap:22px"><p>Our workshop is in the Seaford industrial area off Stephenson Road, easy to reach from Frankston, Patterson Lakes, Carrum Downs and Chelsea. Customers bring their Audi, Volkswagen and European cars to us from:</p><ul class="area-list">{areas}</ul><p style="display:flex;gap:24px;flex-wrap:wrap"><a class="more" href="{PAGES['frankston'][0]}">Mechanic near Frankston</a><a class="more" href="{PAGES['patterson'][0]}">Mechanic near Patterson Lakes</a></p></div>
     </div>
   </section>
 
@@ -94,7 +96,7 @@ schema = {'@graph': [BUSINESS,
                      {'@type': 'WebPage', '@id': SITE + '/#webpage', 'url': SITE + '/', 'name': 'Audi & VW Mechanic Seaford | VAG Euro Automotive', 'about': {'@id': SITE + '/#business'}, 'isPartOf': {'@id': SITE + '/#website'}},
                      faq_schema(QA)]}
 title = 'Audi &amp; VW Mechanic Seaford, near Frankston | VAG Euro Automotive'
-desc = f'Audi, Volkswagen and European car mechanic in Seaford, near Frankston. Logbook servicing, DSG, timing chains, brakes and diagnostics. Book online or call {PHONE}.'
+desc = f'Audi & Volkswagen mechanic in Seaford, near Frankston & Patterson Lakes. DSG & transmission repair, mechatronics, VW water pumps and logbook servicing. Call {PHONE}.'
 pre = '<link rel="preload" as="image" href="images/three-hoists.jpg" imagesrcset="images/three-hoists-800.jpg 800w, images/three-hoists.jpg 1200w" imagesizes="100vw" fetchpriority="high">\n'
 html = head(title, desc, 'index.html', schema, extra=pre).replace('<title>' + title + '</title>', '<title>Audi & VW Mechanic Seaford, near Frankston | VAG Euro Automotive</title>')
 html = html.replace(f'content="{title}"', 'content="Audi & VW Mechanic Seaford, near Frankston | VAG Euro Automotive"')

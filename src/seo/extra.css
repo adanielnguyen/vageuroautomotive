@@ -66,3 +66,5 @@ footer ul.plain a { text-transform: none; letter-spacing: 0.02em; font-size: 0.9
 @media (min-width: 860px) { .more-links ul { grid-template-columns: repeat(3, 1fr); } }
 .more-links li a { display: block; padding: 22px 0; border-bottom: 1px solid var(--line); text-decoration: none; letter-spacing: 0.08em; }
 .more-links li a:hover { color: var(--accent); }
+.svc-list li b a { text-decoration: none; border-bottom: 1px solid var(--accent); }
+.svc-list li b a:hover { color: var(--accent); }

@@ -31,9 +31,9 @@ def cta(h):
 
 
 def more(exclude):
-    links = [(u, {'audi': 'Audi mechanic Seaford', 'vw': 'Volkswagen mechanic Seaford', 'euro': 'European car mechanic Seaford', 'frankston': 'Mechanic near Frankston'}[k]) for k, (u, n) in PAGES.items() if u != exclude]
+    links = [(u, LINK_TEXT[k]) for k, (u, n) in PAGES.items() if u != exclude]
     links += [(u, t) for u, t in GUIDES.values() if u != exclude]
-    lis = ''.join(f'<li><a href="{u}">{t}</a></li>' for u, t in links[:6])
+    lis = ''.join(f'<li><a href="{u}">{t}</a></li>' for u, t in links[:9])
     return f'''  <section class="more-links">
     <div class="wrap">
       <p class="eyebrow">Keep reading</p>
@@ -103,7 +103,7 @@ page(PAGES['audi'][0],
         <h2>Audi repairs we do</h2>
         <ul>
           <li><strong>S tronic and DSG gearboxes:</strong> gearbox oil services and clutch faults</li>
-          <li><strong>Mechatronic unit repair:</strong> diagnosis and repair of S tronic and DSG mechatronic units, the gearbox's control unit</li>
+          <li><strong>Mechatronic unit repair:</strong> diagnosis and repair of S tronic and DSG mechatronic units, the gearbox's control unit. <a href="{PAGES['mech'][0]}">More about mechatronic repair</a></li>
           <li><strong>Timing belts and chains:</strong> TFSI timing chains and tensioners, TDI timing belt kits and water pumps</li>
           <li><strong>quattro and Haldex:</strong> Haldex coupling services, differential oil services and all-wheel-drive faults</li>
           <li><strong>TDI diesels and DPF:</strong> diesel particulate filter (DPF) repairs, EGR faults and timing belts</li>
@@ -135,13 +135,13 @@ page(PAGES['vw'][0],
         <h2>VW repairs we do</h2>
         <ul>
           <li><strong>DSG gearboxes:</strong> DSG oil and filter services and clutch faults. <a href="{GUIDES['dsg'][0]}">Read our DSG guide</a></li>
-          <li><strong>DSG mechatronic unit repair:</strong> diagnosis and repair of the mechatronic unit that controls the gearbox</li>
+          <li><strong>DSG mechatronic unit repair:</strong> diagnosis and repair of the mechatronic unit that controls the gearbox. <a href="{PAGES['mech'][0]}">More about mechatronic repair</a></li>
           <li><strong>TSI timing chains:</strong> chain, tensioner and guide replacement. <a href="{GUIDES['chain'][0]}">What a chain rattle sounds like</a></li>
           <li><strong>TDI diesels and DPF:</strong> diesel particulate filter (DPF) repairs, EGR faults, timing belt kits and water pumps</li>
           <li><strong>4MOTION and Haldex:</strong> Haldex coupling services and all-wheel-drive faults on Tiguan, Golf R, Passat and Arteon</li>
           <li><strong>Brakes:</strong> pads, rotors, fluid and electronic park brakes</li>
           <li><strong>Diagnostics:</strong> warning lights, fault codes, battery replacement and coding</li>
-          <li><strong>Cooling and leaks:</strong> water pumps, thermostat housings, coolant leaks and oil leaks</li>
+          <li><strong>Cooling and leaks:</strong> <a href="{PAGES['pump'][0]}">VW water pump replacement</a>, thermostat housings, coolant leaks and oil leaks</li>
           <li><strong>Suspension, steering and air conditioning</strong></li>
         </ul>
         <h2>VW models we service</h2>
@@ -209,6 +209,124 @@ page(PAGES['frankston'][0],
       ('Do you only work on European cars?', 'Audi and Volkswagen are our speciality, and we also service Skoda, Cupra, Porsche, Mercedes-Benz, BMW and Mini.')],
      'Book your car in from Frankston', 'Mechanic near Frankston')
 
+def service(name, desc):
+    return {'@type': 'Service', 'name': name, 'serviceType': name, 'description': desc, 'provider': {'@id': SITE + '/#business'},
+            'areaServed': [{'@type': 'City', 'name': a + ', VIC'} for a in ['Seaford', 'Frankston', 'Patterson Lakes', 'Carrum Downs', 'Chelsea']]}
+
+
+# ---------- DSG & transmission ----------
+page(PAGES['dsg'][0],
+     'DSG & Transmission Repair Seaford | Audi & VW Mechanic near Frankston',
+     f'DSG, S tronic and automatic transmission servicing and repair in Seaford, near Frankston and Patterson Lakes. Gearbox faults, mechatronics and DSG services. Call {PHONE}.',
+     'DSG &amp; transmission repair in Seaford', 'DSG · S tronic · automatic',
+     'Gearbox servicing, diagnosis and repair for Volkswagen, Audi, Skoda and Cupra DSG and S tronic transmissions, from mechanics who work on them every week.',
+     'audi-s3-bay', 'Audi in the service bay for DSG transmission repair in Seaford',
+     f'''        <p class="lede">A dual-clutch DSG or S tronic gearbox needs a mechanic who knows it. We service, diagnose and repair Volkswagen Group transmissions at our Seaford workshop, a short drive from Frankston and Patterson Lakes.</p>
+        <h2>Transmission problems we fix</h2>
+        <ul>
+          <li>Jerky, shuddering or slipping take-off from a standstill</li>
+          <li>Harsh, delayed or missed gear changes</li>
+          <li>A flashing gear indicator or a gearbox warning on the dash</li>
+          <li>Limp mode, or the car refusing to select drive or reverse</li>
+          <li>Noise or vibration from the gearbox</li>
+        </ul>
+        <h2>DSG and S tronic servicing</h2>
+        <p>Wet-clutch DSG gearboxes need an oil and filter change at set intervals, often around every 60,000 km. We drain and refill with oil that meets VW's specification, replace the filter, check for fault codes and run the clutch adaptation where needed. <a href="{GUIDES['dsg'][0]}">Read our DSG service guide</a>.</p>
+        <h2>Mechatronic unit repair</h2>
+        <p>Many DSG faults come from the mechatronic unit, the gearbox's built-in control unit. We diagnose it properly and repair the mechatronic unit where possible, instead of replacing the whole gearbox. <a href="{PAGES['mech'][0]}">More about mechatronic repair</a>.</p>
+        <h2>Automatic transmission servicing</h2>
+        <p>We also service conventional automatic transmissions, such as those in the Touareg, Amarok and larger Audis, including fluid and filter changes and fault diagnosis.</p>
+        <h2>Gearboxes we work on</h2>
+        <p>6-speed DQ250 and 7-speed DQ200, DQ381 and DQ500 DSGs, Audi S tronic, and the automatic transmissions used across Volkswagen, Audi, Skoda and Cupra.</p>''',
+     ['DSG', 'S tronic', 'Mechatronics', 'Automatic', 'Clutch faults', 'Limp mode'],
+     [('How much does a DSG service cost?', f'It depends on the gearbox and the car. Call us on {PHONE} or book online with your model and we will quote before any work starts.'),
+      ('Can a faulty DSG be repaired instead of replaced?', 'Often, yes. Many faults come from the mechatronic unit or clutch adaptation, which can be repaired or reset without replacing the gearbox.'),
+      ('Is your workshop near Frankston and Patterson Lakes?', 'Yes. We are at 11 Stephenson Road, Seaford, a short drive from Frankston, Patterson Lakes, Carrum Downs and Chelsea.')],
+     'Book your gearbox in', 'DSG & transmission repair',
+     service('DSG and transmission repair', 'DSG, S tronic and automatic transmission servicing, diagnosis and repair.'))
+
+# ---------- Mechatronic ----------
+page(PAGES['mech'][0],
+     'DSG Mechatronic Unit Repair Seaford | VW & Audi Mechatronics',
+     f'DSG and S tronic mechatronic unit diagnosis and repair in Seaford, near Frankston and Patterson Lakes. Fix gearbox faults without replacing the whole transmission. Call {PHONE}.',
+     'DSG mechatronic unit repair', 'Mechatronics',
+     'Diagnosis and repair of DSG and S tronic mechatronic units for Volkswagen, Audi, Skoda and Cupra. Often the fix that saves replacing the whole gearbox.',
+     'technician-718-hoist', 'Mechanic diagnosing a gearbox fault on a car on the hoist',
+     f'''        <p class="lede">The mechatronic unit is the brain of a DSG or S tronic gearbox. It combines the transmission's control electronics with the hydraulics that operate the clutches and shift the gears. When it fails, the gearbox can't shift properly.</p>
+        <h2>Signs of a mechatronic fault</h2>
+        <ul>
+          <li>The gear indicator flashes, or a gearbox warning appears</li>
+          <li>The car drops into limp mode or loses some gears</li>
+          <li>Harsh, jerky or delayed shifts</li>
+          <li>The car won't select drive or reverse</li>
+          <li>Fault codes for gearbox pressure, solenoids or the control unit</li>
+        </ul>
+        <h2>How we repair it</h2>
+        <p>We start by reading the fault codes and checking live data to confirm the mechatronic unit is the cause, rather than clutch wear or low oil. Depending on the fault, we repair or recondition the mechatronic unit, or quote for a replacement if it can't be repaired. Afterwards we run the basic settings and clutch adaptation and road test the car.</p>
+        <h2>Gearboxes we see most</h2>
+        <p>The 7-speed dry-clutch DQ200 (used with many 1.2 and 1.4 TSI engines) is the one most often affected. We also work on the 6-speed DQ250 and 7-speed DQ381 and DQ500 wet-clutch DSGs and Audi S tronic.</p>
+        <h2>Related services</h2>
+        <p><a href="{PAGES['dsg'][0]}">DSG and transmission repair</a> · <a href="{GUIDES['dsg'][0]}">DSG service guide</a> · <a href="{PAGES['vw'][0]}">Volkswagen mechanic</a> · <a href="{PAGES['audi'][0]}">Audi mechanic</a></p>''',
+     ['DQ200', 'DQ250', 'DQ381', 'DQ500', 'S tronic', 'Adaptation'],
+     [('Do I need a new gearbox if the mechatronic unit fails?', 'Usually not. The mechatronic unit can often be repaired or replaced on its own, which costs far less than a new transmission.'),
+      ('Which cars have mechatronic problems?', 'Mostly Volkswagen, Audi, Skoda and Cupra with DSG or S tronic gearboxes, especially the 7-speed DQ200 fitted to many smaller TSI engines.')],
+     'Book a gearbox diagnosis', 'Mechatronic unit repair',
+     service('DSG mechatronic unit repair', 'Diagnosis and repair of DSG and S tronic mechatronic units.'))
+
+# ---------- VW water pump ----------
+page(PAGES['pump'][0],
+     'VW Water Pump Replacement Seaford | Volkswagen & Audi Coolant Leaks',
+     f'VW water pump and thermostat housing replacement in Seaford, near Frankston and Patterson Lakes. Fix coolant leaks on Golf, Tiguan, Passat, Amarok and Audi. Call {PHONE}.',
+     'VW water pump replacement', 'Cooling system',
+     'Coolant leaks and low coolant warnings are common on Volkswagen and Audi engines. We find the leak and replace the water pump, thermostat housing or hoses with quality parts.',
+     'golf-gti-pair', 'Volkswagen Golf GTIs at our Seaford workshop for water pump replacement',
+     f'''        <p class="lede">On many Volkswagen and Audi petrol engines, the water pump and thermostat sit in a plastic housing that can crack or leak with age and heat. On diesels, the water pump is driven by the timing belt and is replaced with it.</p>
+        <h2>Signs your water pump is failing</h2>
+        <ul>
+          <li>A low coolant warning, or topping up coolant often</li>
+          <li>Pink or purple crusty residue around the engine or under the car</li>
+          <li>A sweet smell after driving</li>
+          <li>The temperature gauge rising, or the engine overheating</li>
+          <li>Coolant drips under the front of the car</li>
+        </ul>
+        <h2>Engines we see it on</h2>
+        <p>The 1.8 and 2.0 TSI (EA888) in the Golf, Golf GTI, Golf R, Tiguan, Passat, Skoda Octavia and Audi A3, A4 and Q5 are the most common. On 2.0 TDI engines, including the Amarok, Golf and Tiguan diesels, we replace the water pump as part of the <a href="{PAGES['vw'][0]}">timing belt service</a>.</p>
+        <h2>How we fix it</h2>
+        <p>We pressure test the cooling system to find the exact leak, then replace the water pump, thermostat housing or hoses. We refill with coolant that meets VW's specification and bleed the system, so there are no air pockets.</p>
+        <h2>Don't ignore a coolant leak</h2>
+        <p>Running low on coolant can overheat the engine and damage the head gasket, which costs far more than a water pump. If your low coolant light is on, <a href="{BOOK}">book a check</a> or call <a href="{TEL}">{PHONE}</a>.</p>''',
+     ['Golf', 'Tiguan', 'Passat', 'Amarok', 'Audi A3', 'Audi Q5'],
+     [('Can I drive with a leaking water pump?', 'Only for a short time while keeping the coolant topped up. A leak can get worse quickly and overheat the engine, so book it in as soon as you can.'),
+      ('Should the thermostat be replaced with the water pump?', 'On many TSI engines the water pump and thermostat share one housing, so they are often replaced together. We will tell you what your engine needs.')],
+     'Book your water pump repair', 'VW water pump replacement',
+     service('Volkswagen water pump replacement', 'Water pump, thermostat housing and coolant leak repairs for Volkswagen and Audi.'))
+
+# ---------- Patterson Lakes ----------
+page(PAGES['patterson'][0],
+     'Mechanic near Patterson Lakes | Audi & VW Car Mechanic | VAG Euro Automotive',
+     f'Car mechanic near Patterson Lakes. VAG Euro Automotive in Seaford services Audi, Volkswagen and European cars: DSG, mechatronics, water pumps and logbook servicing. Call {PHONE}.',
+     'Mechanic near Patterson Lakes', 'Patterson Lakes &amp; Carrum',
+     'Our Seaford workshop is a short drive from Patterson Lakes and Carrum. Bring us your Audi, Volkswagen or European car for servicing and repairs.',
+     'workshop-bays', 'Cars in the VAG Euro Automotive workshop near Patterson Lakes',
+     f'''        <p class="lede">If you live in Patterson Lakes, Carrum or Bonbeach, VAG Euro Automotive is close by at 11 Stephenson Road, Seaford. We're an independent mechanic specialising in Audi and Volkswagen, and we service other European cars too.</p>
+        <h2>Services for Patterson Lakes drivers</h2>
+        <ul>
+          <li><a href="{PAGES['audi'][0]}">Audi servicing and repairs</a></li>
+          <li><a href="{PAGES['vw'][0]}">Volkswagen servicing and repairs</a></li>
+          <li><a href="{PAGES['dsg'][0]}">DSG and transmission repair</a></li>
+          <li><a href="{PAGES['mech'][0]}">DSG mechatronic unit repair</a></li>
+          <li><a href="{PAGES['pump'][0]}">VW water pump replacement</a></li>
+          <li>Logbook servicing that keeps your new-car warranty intact</li>
+        </ul>
+        <h2>Easy drop-off</h2>
+        <p>Loan cars are available on request, subject to availability. You can also wait in our lounge for shorter jobs, or leave your keys in the key drop box early or after hours. We're open Monday to Friday 8:00 to 5:00 and Saturday 8:30 to 2:00.</p>
+        <h2>Also close to</h2>
+        <p>Seaford, Frankston, Carrum Downs, Chelsea, Aspendale and Kananook. <a href="{PAGES['frankston'][0]}">Mechanic near Frankston</a>.</p>''',
+     ['Patterson Lakes', 'Carrum', 'Bonbeach', 'Seaford', 'Chelsea', 'Carrum Downs'],
+     [('How far is your workshop from Patterson Lakes?', 'We are at 11 Stephenson Road, Seaford, a short drive from Patterson Lakes and Carrum.'),
+      ('Do you only work on Audi and Volkswagen?', 'Audi and Volkswagen are our speciality, and we also service Skoda, Cupra, Porsche, Mercedes-Benz, BMW and Mini.')],
+     'Book your car in from Patterson Lakes', 'Mechanic near Patterson Lakes')
+
 # ---------- Guides ----------
 article(GUIDES['warranty'][0],
         'Logbook Servicing & New-Car Warranty | Audi & VW Mechanic Seaford',
@@ -261,7 +379,7 @@ article(GUIDES['dsg'][0],
         </ul>
         <p>Catching these early is usually far cheaper than repairing a failed clutch pack or mechatronic unit.</p>
         <h2>Mechatronic unit repair</h2>
-        <p>The mechatronic unit is the gearbox's built-in control unit, combining its electronics and hydraulics. Faults often show up as a flashing gear indicator, harsh or missed shifts, or limp mode. We diagnose the fault, then repair the mechatronic unit rather than defaulting to a full gearbox replacement.</p>
+        <p>See our <a href="{PAGES['mech'][0]}">mechatronic unit repair</a> and <a href="{PAGES['dsg'][0]}">DSG and transmission repair</a> pages. The mechatronic unit is the gearbox's built-in control unit, combining its electronics and hydraulics. Faults often show up as a flashing gear indicator, harsh or missed shifts, or limp mode. We diagnose the fault, then repair the mechatronic unit rather than defaulting to a full gearbox replacement.</p>
         <h2>DSG servicing in Seaford</h2>
         <p>We service and repair DSG and S tronic gearboxes on Volkswagen, Audi, Skoda and Cupra at our workshop in Seaford, near Frankston. <a href="{BOOK}">Book online</a> or call <a href="{TEL}">{PHONE}</a>.</p>''',
         'Book a DSG service')
